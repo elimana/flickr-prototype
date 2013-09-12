@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <form action="/" method="post">
+
+	  Text: <input type="text" name="text" value="{{ form.get('text','') }}"><br>
+	  Address: <input type="text" name="address" value="{{ form.get('address','') }}"><br>
+	  Radius: <input type="text" name="radius" value="{{ form.get('radius','') }}"><br>
+	  <input type="submit" value="Submit"> 
+
+	{% if info %}
+		<div>
+	  	<hr>
+	  	<p>
+	  		Search radius: {{ form['radius'] }}<br>
+	  		Test radius: {{ radius*5 }}<br>
+	  		Photos inside search radius: {{ photos_in }}<br>
+	  		Photos inside test radius: {{ photos_out }}<br>
+	  		Percentage of photos in test radius from search radius: %{{ percentage_in }}
+	  	</p>
+	  	<hr>
+	  </div>
+
+	{% for photo in info %}
+    	<div>
+    	<img src={{ photo['url'] }}>
+    	<p>
+    	Title: {{ photo['title'] }}<br>
+    	Posted on {{ photo['date'] }} by {{ photo['user'] }}
+    	</p>
+    	<hr>
+    	</div>
+	{% endfor %}
+
+	{% endif %}  
+
+	</form>
+</body>
+</html>

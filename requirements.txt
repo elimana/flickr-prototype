@@ -1,0 +1,13 @@
+Flask==0.10.1
+Jinja2==2.7.1
+MarkupSafe==0.18
+Werkzeug==0.9.4
+flickr-api==0.4
+-e git+https://git@github.com/beichhor/googleizer.git@02b2156023a1d7a7994bb82dea7f34895175dfba#egg=googleizer-master
+gunicorn==18.0
+httplib2==0.8
+itsdangerous==0.23
+oauth==1.0.1
+poster==0.8.1
+requests==1.2.3
+wsgiref==0.1.2
